@@ -143,12 +143,13 @@ nav {
     box-shadow: 0 10px 30px rgba(162, 155, 254, 0.1);
 }
 
+/* Исправим также нижнюю часть карточки, чтобы кнопка Купить и Цена стояли ровно */
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
-    padding-top: 20px;
+    margin-top: 25px;
+    padding-bottom: 5px;
 }
 
 .price {
@@ -245,4 +246,26 @@ nav {
     background: #a29bfe;
     color: #000;
     border-color: #fff;
+}
+
+.discuss-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05) !important; /* Убираем белый фон */
+    border: 1px solid #333 !important;
+    color: #888 !important;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.discuss-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-color: var(--accent) !important;
 }
