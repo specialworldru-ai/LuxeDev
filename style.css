@@ -1,102 +1,119 @@
-/* Основные цвета LuxeDev */
 :root {
-    --accent: #6c5ce7;
-    --accent-hover: #a29bfe;
-    --bg: #0a0a0c;
-    --card-bg: #16161a;
-    --text: #e0e0e0;
+    --accent: #a29bfe;
+    --bg: #0f0f12;
+    --card: #18181c;
+    --text: #f0f0f0;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Кастомный скроллбар */
-::-webkit-scrollbar { width: 8px; }
+/* Тот самый кастомный скроллбар */
+::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { 
     background: var(--accent); 
-    border-radius: 10px; 
+    border-radius: 5px; 
 }
 
-/* Навигация */
 header {
-    padding: 20px 10%;
-    background: rgba(16, 16, 20, 0.8);
-    backdrop-filter: blur(10px);
+    padding: 15px 8%;
+    background: rgba(20, 20, 25, 0.95);
+    border-bottom: 1px solid #2a2a30;
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #222;
+    z-index: 1000;
 }
 
 nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: bold; color: var(--accent); letter-spacing: 1px; }
+.logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; }
+.logo span { color: var(--accent); }
+
 nav ul { display: flex; list-style: none; gap: 30px; }
-nav a { color: var(--text); text-decoration: none; transition: 0.3s; }
+nav a { color: #bbb; text-decoration: none; transition: 0.3s; font-size: 14px; }
 nav a:hover { color: var(--accent); }
 
-/* Сетка товаров */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at center, #1e1e2e 0%, #0f0f12 100%);
+}
+
+.hero h1 { font-size: 48px; margin-bottom: 10px; }
+.hero p { color: #888; font-size: 18px; }
+
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 50px 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 8%;
 }
 
 .plugin-card {
-    background: var(--card-bg);
-    border: 1px solid #222;
+    background: var(--card);
+    border: 1px solid #2a2a30;
+    border-radius: 20px;
     padding: 25px;
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    width: 300px;
+    transition: 0.4s;
     position: relative;
-    overflow: hidden;
 }
 
 .plugin-card:hover {
-    border-color: var(--accent);
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(162, 155, 254, 0.1);
 }
 
-.price {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 15px 0;
+.plugin-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #2d3436;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
     color: var(--accent);
 }
 
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.price { font-size: 22px; font-weight: bold; }
+
 .buy-btn {
-    width: 100%;
     background: var(--accent);
-    color: white;
+    color: #000;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
     cursor: pointer;
-    font-weight: 600;
     transition: 0.3s;
 }
 
-.buy-btn:hover { background: var(--accent-hover); }
+.buy-btn:hover { background: #fff; transform: scale(1.05); }
 
-/* Кнопка "Обсудить" */
 .discuss-btn {
-    background: transparent;
-    border: 1px solid #444;
-    color: #888;
-    margin-top: 10px;
     width: 100%;
+    background: transparent;
+    border: 1px solid #333;
+    color: #777;
+    margin-top: 15px;
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.discuss-btn:hover { border-color: var(--text); color: var(--text); }
+.discuss-btn:hover { color: #fff; border-color: #666; }
