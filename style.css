@@ -1,0 +1,102 @@
+/* Основные цвета LuxeDev */
+:root {
+    --accent: #6c5ce7;
+    --accent-hover: #a29bfe;
+    --bg: #0a0a0c;
+    --card-bg: #16161a;
+    --text: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { 
+    background: var(--accent); 
+    border-radius: 10px; 
+}
+
+/* Навигация */
+header {
+    padding: 20px 10%;
+    background: rgba(16, 16, 20, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #222;
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; color: var(--accent); letter-spacing: 1px; }
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav a { color: var(--text); text-decoration: none; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
+
+/* Сетка товаров */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 50px 10%;
+}
+
+.plugin-card {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    padding: 25px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.plugin-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.1);
+}
+
+.price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: var(--accent);
+}
+
+.buy-btn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.buy-btn:hover { background: var(--accent-hover); }
+
+/* Кнопка "Обсудить" */
+.discuss-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.discuss-btn:hover { border-color: var(--text); color: var(--text); }
