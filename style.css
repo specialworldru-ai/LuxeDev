@@ -116,4 +116,82 @@ nav a:hover { color: var(--accent); }
     transition: 0.3s;
 }
 
-.discuss-btn:hover { color: #fff; border-color: #666; }
+.discuss-btn:hover { color: #fff; border-color: #666; }/* Кнопка регистрации с эффектом свечения */
+.register-btn {
+    background: linear-gradient(135deg, var(--accent) 0%, #6c5ce7 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(162, 155, 254, 0.3);
+}
+
+.register-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(162, 155, 254, 0.6);
+    background: #fff;
+    color: #000;
+}
+
+/* Выпадающее меню авторизации */
+.auth-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.auth-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--card);
+    border: 1px solid #2a2a30;
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px;
+    display: none; /* Скрыто по умолчанию */
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.auth-wrapper:hover .auth-dropdown {
+    display: flex; /* Показываем при наведении */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-dropdown p {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
+
+/* Кнопки соцсетей */
+.login-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.login-item img { width: 20px; height: 20px; }
+
+.tg { background: #0088cc22; border: 1px solid #0088cc; }
+.tg:hover { background: #0088cc; }
+
+.ds { background: #5865f222; border: 1px solid #5865f2; }
+.ds:hover { background: #5865f2; }
