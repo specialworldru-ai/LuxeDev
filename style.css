@@ -21,22 +21,58 @@ body {
     border-radius: 5px; 
 }
 
+/* Исправляем шапку */
 header {
-    padding: 15px 8%;
+    padding: 0 8%;
+    height: 80px; /* Фиксированная высота для ровного выравнивания */
     background: rgba(20, 20, 25, 0.95);
     border-bottom: 1px solid #2a2a30;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; }
-.logo span { color: var(--accent); }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
 
-nav ul { display: flex; list-style: none; gap: 30px; }
-nav a { color: #bbb; text-decoration: none; transition: 0.3s; font-size: 14px; }
-nav a:hover { color: var(--accent); }
+.user-panel {
+    display: flex;
+    align-items: center;
+}
+
+/* Настройка выпадающего меню */
+.auth-dropdown {
+    position: absolute;
+    top: calc(100% + 10px); /* Появляется строго под кнопкой */
+    right: 0;
+    background: #1c1c21;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px;
+    display: none; /* Скрыто изначально */
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+
+/* Класс, который будет добавляться при клике */
+.auth-dropdown.active {
+    display: flex;
+}
 
 .hero {
     text-align: center;
