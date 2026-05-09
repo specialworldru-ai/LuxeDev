@@ -120,9 +120,9 @@ nav {
 /* --- КАРТОЧКИ ПЛАГИНОВ --- */
 .products {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Карточки будут прижаты к левому краю отступа */
     gap: 30px;
-    padding: 50px 8%;
+    padding: 20px 10%; /* Одинаковый отступ 10% со всех сторон */
     flex-wrap: wrap;
 }
 
@@ -268,4 +268,27 @@ nav {
     background: rgba(255, 255, 255, 0.1) !important;
     color: #fff !important;
     border-color: var(--accent) !important;
+}
+
+.hero {
+    padding: 80px 0 40px 0; /* Отступы сверху и снизу */
+    text-align: left; /* Текст будет слева, но с правильным отступом */
+}
+
+.hero .container {
+    padding: 0 10%; /* Те же 10%, что мы ставили в header */
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    color: #888;
+    font-size: 18px;
+    max-width: 600px; /* Чтобы текст не растягивался на весь экран */
+    margin: 0;
 }
