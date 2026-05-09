@@ -16,10 +16,26 @@ document.addEventListener('click', () => {
 authDropdown.addEventListener('click', (e) => {
     e.stopPropagation();
 });// --- ЛОГИКА ОКНА ОПЛАТЫ ---
-const buyButtons = document.querySelectorAll('.buy-btn');
 const paymentModal = document.getElementById('paymentModal');
+const buyButtons = document.querySelectorAll('.buy-btn');
 const closeModal = document.getElementById('closeModal');
-const paymentItemName = document.getElementById('paymentItemName');
+
+buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        paymentModal.classList.add('active'); // Показываем окно
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    paymentModal.classList.remove('active'); // Скрываем окно
+});
+
+// Закрытие при клике на фон
+window.addEventListener('click', (e) => {
+    if (e.target === paymentModal) {
+        paymentModal.classList.remove('active');
+    }
+});
 
 // Открываем модалку при клике на ЛЮБУЮ кнопку "Купить"
 buyButtons.forEach(btn => {
