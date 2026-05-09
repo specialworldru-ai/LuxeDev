@@ -292,3 +292,27 @@ nav {
     max-width: 600px; /* Чтобы текст не растягивался на весь экран */
     margin: 0;
 }
+
+footer {
+    background: #0a0a0c;
+    padding: 40px 0;
+    border-top: 1px solid #2a2a30;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.footer-container p {
+    color: #666; /* Неброский серый цвет */
+    font-size: 14px;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Выделим год и название чуть ярче */
+.footer-container p:first-child {
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
